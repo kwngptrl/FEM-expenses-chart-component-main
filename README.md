@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL here](https://github.com/kwngptrl/FEM-expenses-chart-component-main)
-- Live Site URL: [Live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live site URL here](https://kwngptrl.github.io/FEM-expenses-chart-component-main/)
 
 ## My process
 
