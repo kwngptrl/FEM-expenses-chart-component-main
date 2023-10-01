@@ -1,0 +1,187 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+:root {
+    /* primary */
+    --primary-soft-red: hsl(10, 79%, 65%);
+    --primary-cyan: hsl(186, 34%, 60%);
+    
+    /* neutral */
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-dark-brown: hsl(25, 47%, 15%);
+    --neutral-medium-brown: hsl(28, 10%, 53%);
+    --neutral-cream: hsl(27, 66%, 92%);
+    --neutral-very-pale-orange: hsl(33, 100%, 98%);
+
+    --bar-chart-color: hsl(10, 79%, 65%);
+    --hovered-bar-chart-color: hsl(10, 100%, 76%);
+    --bar-chart-color-current-day: hsl(186, 34%, 60%);
+    --hovered-bar-chart-current-day: hsl(186, 47%, 80%);
+    
+    /* font body-copy */
+    --fs-body-copy: 18px;
+
+    /* --small-radius: .5rem; */
+    --small-radius: .75rem;
+
+    --pill-width: 3rem;
+    --pill-height: 1.5rem;
+}
+
+html {
+    font-size: var(--fs-body-copy);
+}
+
+body {
+    /*  desktop: 1440x800px
+        mobile: 375x780px 
+        
+        desktop main: 538x660px (upper and main)
+            upper container: 538x126px
+            gap: 23px
+            main container: 538x512px
+        mobile main: 344x544px (upper and main)
+            upper container: 344x97px
+            gap: 15px
+            main container: 344x420px
+    */
+    font-family: 'DM Sans', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+/* from https://austingil.com/how-to-build-html-forms-right-accessibility/ */
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+  }
+ 
+.container {
+    max-width: 1440px;
+    margin-inline: auto;
+        
+    min-height: 100vh;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    gap: 1rem;
+    place-items: center;
+    background-color: var(--neutral-cream);
+}
+
+header,
+main {
+    /*  Values dervied from clamp calculator at https://clamp.font-size.app/  */
+    /*  min viewport width: 375px,
+        max viewport width: 1440px,
+        min font size: 305px,
+        max font size: 420px    */
+    max-width: clamp(19.0625rem, 16.5317rem + 10.7981vw, 26.25rem);
+    width: 100%;
+    margin-inline: 1rem;
+    border-radius: var(--small-radius);
+    /*  min viewport width: 375px,
+        max viewport width: 1440px,
+        min font size: 18px,
+        max font size: 24px    */
+    padding: clamp(1.125rem, 0.993rem + 0.5634vw, 1.5rem);
+}
+
+header {
+    align-self: end;
+    background-color: var(--primary-soft-red);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    /*  min viewport width: 375px,
+        max viewport width: 1440px,
+        min font size: 46px,
+        max font size: 57px    */
+    width: clamp(2.875rem, 2.6329rem + 1.0329vw, 3.5625rem);
+    height: auto;
+}
+
+.balance {
+    color: var(--neutral-white);
+}
+
+small {
+    font-size: .75rem;
+}
+
+.amount-balance {
+    /*  min viewport width: 375px,
+        max viewport width: 1440px,
+        min font size: 18px,
+        max font size: 22px */
+    font-size: clamp(1.125rem, 1.037rem + 0.3756vw, 1.375rem);
+    font-weight: 700;
+    letter-spacing: .05rem;
+}
+
+main {
+    background-color: var(--neutral-white);
+}
+
+.title {
+    color: var(--neutral-dark-brown);
+    /*  min viewport width: 375px,
+        max viewport width: 1440px,
+        min font size: 20px,
+        max font size: 24px */
+    font-size: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
+    font-weight: 700;
+    padding-block-end: 2rem;
+}
+
+.lower {
+    margin-block-start: 1rem;
+    padding-block-start: 1rem;
+    border-top: 2px solid var(--neutral-cream);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower .left .amount-total {
+    /*  min viewport width: 375px,
+        max viewport width: 1440px,
+        min font size: 24px,
+        max font size: 30px */
+    font-size: clamp(1.5rem, 1.368rem + 0.5634vw, 1.875rem);
+    color: var(--neutral-dark-brown);
+    font-weight: 700;
+}
+
+.lower .right {
+    margin-block-start: auto;
+    margin-block-end: .4rem;
+}
+
+.lower .right small {
+    display: block;
+    text-align: end;
+}
+
+.lower .right small:first-of-type {
+    color: var(--neutral-dark-brown);
+    font-weight: 700;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    align-self: end;
+    width: 100%;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
