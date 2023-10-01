@@ -18,6 +18,9 @@ async function fetchData() {
     type: 'bar',
     data,
     options: {
+      onHover: (event, chartElement) => {
+        event.native.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+      },
       plugins: {
         tooltip: {
           displayColors: false,
