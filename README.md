@@ -86,7 +86,7 @@ Now, depending on what day of the week it is, one will see that the current day'
 
 ### Continued development
 
-One thing that I didn't do compared to the challenge was the tooltip is not on top of the each 'bar' without a tooltip arrow. I find the default in Chart.js to be nice enough. Perhaps additional padding around the values would work also.
+One thing that I didn't do compared to the challenge was the tooltip is not on top of each 'bar' and has a tooltip arrow. I find the default in Chart.js to be nice enough. Perhaps additional padding around the values would work also.
 
 ### Useful resources
 
